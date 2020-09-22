@@ -25,4 +25,9 @@ public class FizzBuzzerShould {
         assertThat(fizzBuzzer.fizzBuzz(null), is(instanceOf(List.class)));
     }
 
+    @Test
+    void return_empty_list_when_0() {
+        assertThat(fizzBuzzer.fizzBuzz(0).isEmpty(), is(true));
+    }
+
 }
