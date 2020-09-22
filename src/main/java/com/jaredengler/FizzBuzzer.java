@@ -7,6 +7,10 @@ import java.util.stream.IntStream;
 
 public class FizzBuzzer {
 
+    static boolean isDivisibleBy(int n, int d) {
+        return n % d == 0;
+    }
+
     List<String> fizzBuzz(Integer n) {
 
         if (null == n)

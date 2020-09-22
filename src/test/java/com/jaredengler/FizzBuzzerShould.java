@@ -1,6 +1,8 @@
 
 package com.jaredengler;
 
+import static com.jaredengler.FizzBuzzer.isDivisibleBy;
+import static java.lang.Integer.valueOf;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.CoreMatchers.instanceOf;
@@ -34,6 +36,15 @@ public class FizzBuzzerShould {
     @Test
     void return_list_with_size_n() {
         assertThat(fizzBuzzer.fizzBuzz(16).size(), is(equalTo(16)));
+    }
+
+    @Test
+    void return_list_with_all_numbers_divisible_by_3_being_fizz() {
+        List<String> output = fizzBuzzer.fizzBuzz(16);
+        for (int i = 1; i < 16; i++) {
+            if (isDivisibleBy(i, 3))
+                assertThat(output.get(i), is(equalTo("Fizz")));
+        }
     }
 
 }
