@@ -32,32 +32,33 @@ public class FizzBuzzerShould {
     }
 
     @Test
-    void return_list_with_size_n() {
-        assertThat(fizzBuzzer.fizzBuzz(16).size(), is(equalTo(16)));
-    }
-
-    @Test
     void return_list_with_all_numbers_divisible_by_3_being_fizz() {
-        List<String> output = fizzBuzzer.fizzBuzz(15);
-        for (int i = 1; i < 15; i++)
-            if (isDivisibleBy(i, 3))
-                assertThat(output.get(i), is(equalTo("Fizz")));
+        List<String> fizzBuzzOutput = fizzBuzzer.fizzBuzz(3);
+        for (int i = 0; i < 3; i++) {
+            if (isDivisibleBy(i + 1, 3)) {
+                assertThat(fizzBuzzOutput.get(i), is(equalTo("Fizz")));
+            }
+        }
     }
 
     @Test
     void return_list_with_all_numbers_divisible_by_5_being_buzz() {
-        List<String> output = fizzBuzzer.fizzBuzz(15);
-        for (int i = 1; i < 15; i++)
-            if (isDivisibleBy(i, 5))
-                assertThat(output.get(i), is(equalTo("Buzz")));
+        List<String> fizzBuzzOutput = fizzBuzzer.fizzBuzz(5);
+        for (int i = 0; i < 5; i++) {
+            if (isDivisibleBy(i + 1, 5)) {
+                assertThat(fizzBuzzOutput.get(i), is(equalTo("Buzz")));
+            }
+        }
     }
 
     @Test
     void return_list_with_all_numbers_divisible_by_3_and_5_being_fizzbuzz() {
-        List<String> output = fizzBuzzer.fizzBuzz(16);
-        for (int i = 1; i < 16; i++)
-            if (isDivisibleBy(i, 3) && isDivisibleBy(i, 5))
-                assertThat(output.get(i), is(equalTo("FizzBuzz")));
+        List<String> fizzBuzzOutput = fizzBuzzer.fizzBuzz(15);
+        for (int i = 0; i < 15; i++) {
+            if (isDivisibleBy(i + 1, 15)) {
+                assertThat(fizzBuzzOutput.get(i), is(equalTo("FizzBuzz")));
+            }
+        }
     }
 
 }

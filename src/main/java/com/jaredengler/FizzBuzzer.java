@@ -13,10 +13,10 @@ public class FizzBuzzer {
 
     List<String> fizzBuzz(Integer n) {
 
-        if (null == n)
+        if (null == n || n < 1)
             return List.of();
 
-        return IntStream.range(0, n).boxed().map(i -> {
+        return IntStream.rangeClosed(1, n).boxed().map(i -> {
             if (isDivisibleBy(i, 3) && isDivisibleBy(i, 5))
                 return "FizzBuzz";
             else if (isDivisibleBy(i, 3))
