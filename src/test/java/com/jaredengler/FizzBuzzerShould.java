@@ -47,4 +47,13 @@ public class FizzBuzzerShould {
         }
     }
 
+    @Test
+    void return_list_with_all_numbers_divisible_by_5_being_buzz() {
+        List<String> output = fizzBuzzer.fizzBuzz(16);
+        for (int i = 1; i < 16; i++) {
+            if (isDivisibleBy(i, 5))
+                assertThat(output.get(i), is(equalTo("Buzz")));
+        }
+    }
+
 }
