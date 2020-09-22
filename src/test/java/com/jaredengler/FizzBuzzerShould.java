@@ -38,32 +38,26 @@ public class FizzBuzzerShould {
 
     @Test
     void return_list_with_all_numbers_divisible_by_3_being_fizz() {
-        int max = 15;
-        List<String> output = fizzBuzzer.fizzBuzz(max);
-        for (int i = 1; i < max; i++) {
+        List<String> output = fizzBuzzer.fizzBuzz(15);
+        for (int i = 1; i < 15; i++)
             if (isDivisibleBy(i, 3))
                 assertThat(output.get(i), is(equalTo("Fizz")));
-        }
     }
 
     @Test
     void return_list_with_all_numbers_divisible_by_5_being_buzz() {
-        int max = 15;
-        List<String> output = fizzBuzzer.fizzBuzz(max);
-        for (int i = 1; i < max; i++) {
+        List<String> output = fizzBuzzer.fizzBuzz(15);
+        for (int i = 1; i < 15; i++)
             if (isDivisibleBy(i, 5))
                 assertThat(output.get(i), is(equalTo("Buzz")));
-        }
     }
 
     @Test
     void return_list_with_all_numbers_divisible_by_3_and_5_being_fizzbuzz() {
-        int max = 16;
-        List<String> output = fizzBuzzer.fizzBuzz(max);
-        for (int i = 1; i < max; i++) {
+        List<String> output = fizzBuzzer.fizzBuzz(16);
+        for (int i = 1; i < 16; i++)
             if (isDivisibleBy(i, 3) && isDivisibleBy(i, 5))
                 assertThat(output.get(i), is(equalTo("FizzBuzz")));
-        }
     }
 
 }
