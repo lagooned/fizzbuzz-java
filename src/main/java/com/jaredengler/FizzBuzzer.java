@@ -16,9 +16,12 @@ public class FizzBuzzer {
         if (null == n)
             return List.of();
 
-        return IntStream.range(0, n).boxed()
-            .map(Object::toString)
-            .collect(Collectors.toList());
+        return IntStream.range(0, n).boxed().map(i -> {
+            if (isDivisibleBy(i, 3))
+                return "Fizz";
+            else
+                return i.toString();
+        }).collect(Collectors.toList());
 
     }
 
