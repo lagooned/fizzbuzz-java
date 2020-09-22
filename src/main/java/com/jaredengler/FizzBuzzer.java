@@ -19,6 +19,8 @@ public class FizzBuzzer {
         return IntStream.range(0, n).boxed().map(i -> {
             if (isDivisibleBy(i, 3))
                 return "Fizz";
+            else if (isDivisibleBy(i, 5))
+                return "Buzz";
             else
                 return i.toString();
         }).collect(Collectors.toList());
