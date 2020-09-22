@@ -58,4 +58,14 @@ public class FizzBuzzerShould {
         }
     }
 
+    @Test
+    void return_list_with_all_numbers_divisible_by_3_and_5_being_fizzbuzz() {
+        int max = 16;
+        List<String> output = fizzBuzzer.fizzBuzz(max);
+        for (int i = 1; i < max; i++) {
+            if (isDivisibleBy(i, 3) && isDivisibleBy(i, 5))
+                assertThat(output.get(i), is(equalTo("FizzBuzz")));
+        }
+    }
+
 }
